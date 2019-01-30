@@ -857,6 +857,29 @@ client.login(process.env.TOKEN);
 
 
 
+client.on(`ready`, ()=>{
+  client.setInterval(async function(){
+    let ch = client.guilds.get("466745498385252352").channels;
+    let count = 0;
+    ch.forEach(async function(c){
+      if(c.type === "voice"){
+        c.members.forEach(()=>count++);
+      }
+    })
+    setTimeout(function(){
+      ch.get("اي دي الروم").setName(`اسم الروم ⇏「${count}」`)//count = عدد الاشخاص
+    }, 500)
+  }, 1000)
+})
+
+
+
+
+
+
+
+
+
 
 
 
