@@ -1093,19 +1093,7 @@ client.on('message', message => {
 
          
          
-         
-         client.on('guildMemberAdd', member => {
-
-    const channel = member.guild.channels.find('name', '・text');
-  
-    const millis = new Date().getTime() - member.user.createdAt.getTime();
-    const now = new Date();
-    const createdAt = millis / 1000 / 60 / 60 / 24;
-
-
-
-
-client.on('guildMemberAdd', member => {
+        client.on('guildMemberAdd', member => {
 
     const channel = member.guild.channels.find('name', '・text');
   
@@ -1126,7 +1114,6 @@ client.on('guildMemberAdd', member => {
 
   
 });
-
   
 
          
