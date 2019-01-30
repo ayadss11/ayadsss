@@ -769,22 +769,6 @@ client.on('message', message => {
 
 
 
-client.on('message', function(message) {
-    let messageArray = message.content.split(" ");
-    let args = messageArray[1]
-    if(message.content.startsWith(prefix + "cc")) {
-        //  if(Number(args) //== NaN) return message.reply(`Sry but its in numbers only no text`);
-         if(!message.member.hasPermission("ADMINISTRATOR")) return message.reply('You have no perms.')
-        if(!args) return message.reply(`Pick a number`)
-      
-    let o;
-    for(o = 1; o < `${parseInt(args) + 1}`; ++o)
-    message.guild.createRole({name: `${o}`, color: "RANDOM"})
-    message.reply(`Im making the colors now.`)
-    // message.channel.send(`Now making the colors but if u made it like 1 it will be -1 , Q,E : If u made used the command and u typed in numbers \`${args}\` it will make one so it will be \`${--args}\``)
-}
-});
-
 
 
 
@@ -827,28 +811,6 @@ client.on('ready', () => {//new ready event
 
 
 
-client.on('message', async message => {
-  if(message.author.bot) return;
-  let prefix = '%';
-
-  let command = message.content.split(" ")[0].slice(prefix.length);
-  let args = message.content.split(" ").slice(1);
-  if(!message.content.toLowerCase().startsWith(prefix)) return;
-
-  if(command == 'مسح الالوان' ) {
-    if(!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send(`لاتمتلك الصلاحيات لفعل ذلك! ❌`);
-    message.channel.send("جاري المسح..").then(async m => {
-      await message.guild.roles.forEach(role => {
-        if(/^\d+$/gi.test(role.name)) {
-          role.delete();
-        }
-      });
-      m.edit(`تم إزالة جميع الالوان.`)
-    });
-  }
-});
-
-client.login(process.env.TOKEN); 
 
 
 
@@ -891,81 +853,6 @@ client.on(`ready`, ()=>{
 
 
 
-
-client.on('message', async message => {
- if(message.channel.type === "dm") return;
-  if(message.author.bot) return;
-   if(!temp[message.guild.id]) temp[message.guild.id] = {
-    time: "3000",
-     category : 'Temporary Channels',
-      channel : 'انشاء روم مؤقت'
-       }
-        if(message.content.startsWith('-temp on')){
-         if(!message.member.hasPermission(`MANAGE_GUILD`)) return;
-          var ggg= message.guild.createChannel('Temporary Channels', 'category').then(cg => {
-           var ccc =message.guild.createChannel('انشاء روم مؤقت', 'voice').then(ch => {
-            ch.setParent(cg)
-             message.channel.send('**:white_check_mark:  تم تفعيل الخاصية بنجاح **')
-              client.on('message' , message => {
-               if(message.content === '-temp off') {
-                if(!message.member.hasPermission(`MANAGE_GUILD`)) return;
-                 cg.delete()
-                  ch.delete()
-                   message.channel.send('**:white_check_mark:  تم تعطيل الخاصية بنجاح **  ')
-                    }
-                     });
-                      const time = temp[message.guild.id].time
-                       client.on('message' , message => {
-                        if (message.content.startsWith(prefix + "temp time")) {
-                         if(!message.member.hasPermission(`MANAGE_GUILD`)) return;
-                          let newTime= message.content.split(' ').slice(1).join(" ")
-                          if(!newTime) return message.reply(`**${prefix}temptime <time>  \`1000 = 1s\`**`)
-                     if(isNaN(newTime)) return message.reply(`** The Time Be Nambers :face_palm: **`);
-                    if(newTime < 1) return message.reply(`**The Time Be Up \`3000s\`**`)
-                       temp[message.guild.id].time = newTime
-                      message.channel.send(`**:white_check_mark:  تم حفظ التغييرات  - \`${newTime}\`**`);
-                     }
-                    });
-                   client.on('voiceStateUpdate', (old, neww) => {
-                  let newUserChannel = neww.voiceChannel
-                 let oldUserChannel = old.voiceChannel
-                temp[message.guild.id].category = cg.id
-               temp[message.guild.id].channel = ch.id
-              let channel = temp[message.guild.id].channel
-             let category = temp[message.guild.id].category
-            if(oldUserChannel === undefined && newUserChannel !== undefined && newUserChannel.id == channel) {
-           neww.guild.createChannel(neww.displayName , 'voice').then(c => {
-          c.setParent(category)
-         let scan = setTimeout(()=>{
-        if(!neww.voiceChannel) {
-       c.delete();
-      client.channels.get(channel).overwritePermissions(neww, {
-     CONNECT:true,
-    SPEAK:true
-   })
-  }
- }, temp[neww.guild.id].time);
-  c.overwritePermissions(neww, {
-   CONNECT:true,
-    SPEAK:true,
-     MANAGE_CHANNEL:true,
-      MUTE_MEMBERS:true,
-       DEAFEN_MEMBERS:true,
-    MOVE_MEMBERS:true,
-     VIEW_CHANNEL:true
-      })
-       neww.setVoiceChannel(c)
-            })
-             client.channels.get(channel).overwritePermissions(neww, {
-          CONNECT:false,
-           SPEAK:false
-        })
-               }
-              })
-             })
-           })
-          }
-      });
 
 
 
