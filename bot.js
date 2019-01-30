@@ -420,7 +420,7 @@ client.on('message', message => {
     channel.send(embed).then(msg => {
       msg.react("✅").then(() => msg.react("❌"));
       message.delete()
-      message.channel.send(`**يرجي كتابة اقتراح لكي يتم ارساله الي روم الاقتراحات ❎ **`);
+      message.channel.send(`**شكرا علي كتابة اقتراح تم الارسال في  روم الاقتراحات  ✅ **`);
     });
   }
 });
