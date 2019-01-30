@@ -242,6 +242,52 @@ client.channels.find('id', '538373508959436800').setName("Welcome To Codes");
 
 
 
+var roles = {};
+client.on('guildMemberRemove', member => {
+ roles[member.id] = {roles: member.roles.array()};
+});
+client.on('guildMemberAdd', member => {
+if(!roles[member.user.id]) return;
+console.log(roles[member.user.id].roles.length);
+for(let i = 0; i < roles[member.user.id].roles.length; i++) {
+member.addRole(roles[member.user.id].roles);
+roles[member.user.id].shift();
+}
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
