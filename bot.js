@@ -974,58 +974,6 @@ client.on('message', message => {
          
 
 
-client.on("message", message => {
-    if (!message.channel.guild) return;
-    if (message.author.bot) return;
-    if (!prefixes[message.guild.id]) prefixes[message.guild.id] = {
-        prefix: '!',
-    };
-    var prefix = prefixes[message.guild.id].prefix;
-    var setp = prefixes[message.guild.id];
-    if (message.content.startsWith(prefix + 'setp')) {
-        if (!message.member.hasPermission(`MANAGE_GUILD`)) return message.reply(`**:x: Error: You do not have the required permissions: Manage Server.**`);
- 
-        let args = message.content.split(" ").slice(1);
- 
-        if (!args.join(" ")) return message.reply(`**:x: Error: Say The Prefix Please.**`);
- 
-        message.channel.send(`** Successfully set the new Prefix to  ${args.join(" ")} **`);
-        setp.prefix = args.join();
- 
-    }
- 
-    fs.writeFile("./Database/prefix.json", JSON.stringify(prefixes), (err) => {
-        if (err) console.error(err);
-    });
-});
-// امر التست
-// كل كود اوله ضيف
-/* if (!prefixes[message.guild.id]) prefixes[message.guild.id] = {
-        prefix: '!',
-    };
-    var prefix = prefixes[message.guild.id].prefix;*/
-// واخره
-/* fs.writeFile("./Database/prefix.json", JSON.stringify(prefixes), (err) => {
-        if (err) console.error(err);
-    });*/
-client.on('message', message => {
-    if (!message.channel.guild) return;
-    if (message.author.bot) return;
-        if (!prefixes[message.guild.id]) prefixes[message.guild.id] = {
-        prefix: '!',
-    };
-    var prefix = prefixes[message.guild.id].prefix;
-    if (message.content.startsWith(prefix + `ping`)) {
-        return message.channel.send(`Ping : ${Date.now() - message.createdTimestamp}.`);
-    }
-     fs.writeFile("./Database/prefix.json", JSON.stringify(prefixes), (err) => {
-        if (err) console.error(err);
-    });
-});
- 
- 
-client.login(process.env.TOKEN); 
-
 
 
 
