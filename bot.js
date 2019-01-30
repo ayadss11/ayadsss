@@ -227,7 +227,7 @@ client.channels.find('id', '538373508959436800').setName("Welcome To Co");
 client.channels.find('id', '538373508959436800').setName("Welcome To Cod");
 client.channels.find('id', '538373508959436800').setName("Welcome To Code");
 client.channels.find('id', '538373508959436800').setName("Welcome To Codes");
-  }, 300);
+  }, 900);
 });
 
 
