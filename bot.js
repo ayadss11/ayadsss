@@ -436,7 +436,7 @@ client.on('message', message => {
 client.on('message', message => {
 if(message.author.bot) return;
               if(!message.channel.guild) return;
-    var prefix = "$";
+    var prefix = "!";
     if(message.content.startsWith(prefix + 'bc')) {
     if(!message.channel.guild) return message.channel.send('**الأمر بالسيرفرات بس**').then(m => m.delete(5000));
   if(!message.member.hasPermission('ADMINISTRATOR')) return      message.channel.send('**ماعندك الصلاحية المطلوبة**' );
@@ -543,7 +543,7 @@ client.on("message", msg => { //Narox Dev
 
 var guilds = {};
 client.on('message',async message => {
- var prefix2 = '#';//البرفكس
+ var prefix2 = '!';//البرفكس
   if(message.content.startsWith(prefix2 + "تقديم")) {
  
 if(!message.channel.guild) return message.reply(' ');
@@ -714,7 +714,7 @@ client.on('message', function(message) {
         .setThumbnail(`${message.author.avatarURL}`)
         .setDescription(`\n\n\`\`\`${message.content}\`\`\``)
         .setFooter(`From ${message.author.tag} (${message.author.presence.status.toUpperCase()})`)
-    client.channels.get("ايدي الروم اللي تبي يرسل فيه").send({embed:Dark});
+    client.channels.get("540189873022435338").send({embed:Dark});
     }
 });
 
