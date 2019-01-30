@@ -367,7 +367,7 @@ if(msg.content.startsWith (prefix  + 'serverinfo')) {
 
 
 
-const reply = JSON.parse(fs.readFileSync('./replys.json' , 'utf8'));
+client.reply = JSON.parse(fs.readFileSync('./replys.json' , 'utf8'));
 client.on('message', async message => {
     let messageArray = message.content.split(" ");
    if(message.content.startsWith(prefix + "setReply")) {
@@ -447,7 +447,7 @@ client.on('message', async message => {
 
 
 
-const say = JSON.parse(fs.readFileSync('./say.json' , 'utf8'));
+client.say = JSON.parse(fs.readFileSync('./say.json' , 'utf8'));
 //Perfect Say Code
 client.on('message', async message => {
     let messageArray = message.content.split(" ");
