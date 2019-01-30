@@ -373,7 +373,7 @@ if(msg.content.startsWith (prefix  + 'serverinfo')) {
 
 
 client.on('message', message => {
-    var prefix = "$";
+    var prefix = "!";
      if(message.content === prefix + "mc") {
      if(!message.channel.guild) return message.reply('** This command only for servers**');
                     
@@ -497,43 +497,13 @@ setTimeout(() => {
 
 
 
-client.on("message", msg => { //Narox Dev
-    if(msg.author.bot) return;
-    if(msg.channel.type === 'dm') return;
-  let prefix = '!'; //البرفكس
-  let msgarray = msg.content.split(" ");
-  let cmd = msgarray[0];
-  let args = msgarray.slice(1);
-  if(cmd === `${prefix}warn`){//الامر
-    
-    
-  
-    let rUser = msg.guild.member(msg.mentions.users.first() || msg.guild.members.get(args[0]));
-  if(!rUser) return msg.channel.send("Couldn't find users.");
-      let reason = args.join(" ").slice(22);
-  
-      let reportembed = new Discord.RichEmbed()
-      .setDescription("Warn")
-      .setColor("BLACK")
-      .addField("Warn User", `${rUser} with ID: ${rUser.id}`)
-      .addField("Warn By", `${msg.author} with ID: ${msg.author.id}`)
-      .addField("Channel", msg.channel)
-      .addField("Time", msg.createdAt)
-      .addField("Reason",`${reason}`)
-      
-      
-      let reportchannel = msg.guild.channels.find(`name`,"warn-log"); //حط هنا اسم الروم الي يوريك بعض المعلومات
-      if(!reportchannel) return msg.channel.send("Couldn't find `warn-log` channel. "); //ط هنا اسم الروم الي يوريك بعض المعلومات
-      
-      msg.delete().catch(O_o=>{});
-      reportchannel.send(reportembed);
-      let role = msg.guild.roles.find(`name`, 'Warn'); 
-      if(!role) return msg.guild.channel.send("Could't find `Warn` role."); 
-      rUser.addRole(role);
-      
-          return;
-      }
-      });
+client.on("guildMemberAdd", member => {
+    member.createDM().then(function (channel) {
+    return channel.send(`:rose:  ولكم نورت السيرفر:rose: 
+  :crown:اسم العضو  ${member}:crown:  
+  انت العضو رقم ${member.guild.memberCount} `) 
+  }).catch(console.error)
+  })
 
 
 
@@ -780,6 +750,38 @@ client.on('message', message => {
 
 
 
+client.on('message', message => {
+  if(message.content.includes('discord.gg')){
+                                          if(!message.channel.guild) return message.reply('** advertising me on DM ? 🤔   **');
+      if (!message.member.hasPermissions(['ADMINISTRATOR'])){
+      message.delete()
+  return message.reply(`** Not allowed to advertising Here :angry: ! **`)
+  }
+}
+});
+
+
+
+
+
+
+
+
+client.on('message', function(message) {
+    let messageArray = message.content.split(" ");
+    let args = messageArray[1]
+    if(message.content.startsWith(prefix + "cc")) {
+        //  if(Number(args) //== NaN) return message.reply(`Sry but its in numbers only no text`);
+         if(!message.member.hasPermission("ADMINISTRATOR")) return message.reply('You have no perms.')
+        if(!args) return message.reply(`Pick a number`)
+      
+    let o;
+    for(o = 1; o < `${parseInt(args) + 1}`; ++o)
+    message.guild.createRole({name: `${o}`, color: "RANDOM"})
+    message.reply(`Im making the colors now.`)
+    // message.channel.send(`Now making the colors but if u made it like 1 it will be -1 , Q,E : If u made used the command and u typed in numbers \`${args}\` it will make one so it will be \`${--args}\``)
+}
+});
 
 
 
@@ -789,6 +791,62 @@ client.on('message', message => {
 
 
 
+client.on('message', message => {//new msg event
+if(!message.channel.guild) return;
+  if(message.content.startsWith(prefix + 'set')) {//to create the rainbow role
+      let role = message.guild.roles.find('name', 'Rainbow bot.')
+    if(role) return message.channel.send(`This Step Already Completed !`)//if the role already created return with this msg
+  //start of create role
+  if(!role){
+    rainbow =  message.guild.createRole({
+   name: "Rainbow bot.",//the role will create name
+   color: "#000000",//the default color
+   permissions:[]//the permissions
+ //end of create role
+})
+ 
+}
+message.channel.send('Done The Rainbow Role Setup Has Been Completed')//if the step completed
+}})
+ 
+client.on('ready', () => {//new ready event
+  setInterval(function(){
+      client.guilds.forEach(g => {
+                  var role = g.roles.find('name', 'Rainbow bot.');//rainbow role name
+                  if (role) {
+                      role.edit({color : "RANDOM"});
+                  };
+      });
+  }, 5000);//the rainbow time
+})
+
+
+
+
+
+
+client.on('message', async message => {
+  if(message.author.bot) return;
+  let prefix = '%';
+
+  let command = message.content.split(" ")[0].slice(prefix.length);
+  let args = message.content.split(" ").slice(1);
+  if(!message.content.toLowerCase().startsWith(prefix)) return;
+
+  if(command == 'مسح الالوان' ) {
+    if(!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send(`لاتمتلك الصلاحيات لفعل ذلك! ❌`);
+    message.channel.send("جاري المسح..").then(async m => {
+      await message.guild.roles.forEach(role => {
+        if(/^\d+$/gi.test(role.name)) {
+          role.delete();
+        }
+      });
+      m.edit(`تم إزالة جميع الالوان.`)
+    });
+  }
+});
+
+client.login(process.env.TOKEN); 
 
 
 
