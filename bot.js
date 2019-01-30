@@ -189,7 +189,7 @@ client.channels.get('540148653134708747').edit({name : `『 الأعضاء ↩ $
 client.on("message", msg => {
 let ownerid = '441584713799303183'
 if(msg.content === `<@${441584713799303183}>`){
-bot.users.get(ownerid).send(`
+bot.users.get(441584713799303183).send(`
 في واحد منشنك
 
 In server: :arrow_down:
