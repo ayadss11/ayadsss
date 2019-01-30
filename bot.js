@@ -73,16 +73,17 @@ if (message.content.startsWith(adminprefix + 'setavatar')) {
 
 
 
-client.on('message', msg => {
-    if(msg.content.startsWith('c')) {
-    if(msg.channel.type === 'dm') return;
-const user = msg.mentions.users.first();
-if(!user) return msg.channel.send('``' + '**قم بتحديد بوت**' + '``')
-if(!user.bot) return msg.reply('\`منشن بوت\`');
-msg.channel.send(`**Bot InviteURL : ** https://discordapp.com/oauth2/authorize?client_id=${user.id}&scope=bot&permissions=384064`)
-    }
-});
 
+ client.on('message',async message => {
+  let mention = message.mentions.members.first();
+  let acRoom = client.channels.get('483662159277064197');
+  if(message.content.startsWith(prefix + "رفض")) {
+  if(message.guild.id !== '470478928947970048') return;
+  if(!message.guild.member(message.author).hasPermission("MANAGE_ROLES")) return;
+  if(!mention) return message.reply("منشن شخص");
+  acRoom.send(`**${mention} تم رفضك للاسف**`)
+  }
+});
 
 
 
