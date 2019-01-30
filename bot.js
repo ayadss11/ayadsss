@@ -283,6 +283,117 @@ client.on('message', message => {
 
 
 
+client.on('message', msg => {
+var prefix = "!";
+  if(!msg.guild) return;
+    if (msg.content.startsWith(prefix +'channels')) {
+     let args = msg.content.split(" ").slice(1);
+    if(!msg.channel.guild) return msg.channel.send('**هذا الأمر فقط للسيرفرات**').then(m => m.delete(5000));
+let eyadandr3d = new Discord.RichEmbed()
+.setThumbnail(msg.author.avatarURL)
+.setDescription(`                            📝ان كنت تريد انشاء روم صوتي اظغط علي الايموجي🎤                                                                                                                                                                                     الان كنت تريد انشاء مستند اضغط علي الايموجي                                                                                                                                                                                                                                                      
+ ✏ان كنت تريد انشاء شات كتابي اظغط علي الايموجي `)
+.setFooter('لديك دقيقه للاختيار')
+msg.channel.send(eyadandr3d).then(message => {
+   
+   
+ message.react('✏').then(r=>{
+ message.react('🎤').then(r=>{
+           
+ message.react('📝').then(r=>{
+                                   
+                             
+   
+let Category = (reaction, user) => reaction.emoji.name === '📝' && user.id === msg.author.id;
+let Text = (reaction, user) => reaction.emoji.name === '✏' && user.id === msg.author.id;
+ let Voice = (reaction, user) => reaction.emoji.name === '🎤' && user.id === msg.author.id;
+ 
+let cy = message.createReactionCollector(Category, { time: 60000 });
+let tt = message.createReactionCollector(Text, { time: 60000 });
+ let ve  = message.createReactionCollector(Voice, { time: 60000 });
+ 
+ve.on("collect", r => {
+msg.guild.createChannel(args.join(' '), 'voice');
+    msg.channel.send(`☑ تم انشاء روم صوتي بنجاح : \`${args}\``)
+    msg.delete();
+})
+tt.on("collect", r => {
+msg.guild.createChannel(args.join(' '), 'text');
+    msg.channel.send(`☑ تم انشاء شات كتابي بنجاح : \`${args}\``)
+    msg.delete();
+})
+cy.on("collect", r => {
+msg.guild.createChannel(args.join(' '), 'category');
+    msg.channel.send(`☑ تم انشاء المستند بنجاح : \`${args}\``)
+    msg.delete();
+})
+})
+})
+})
+})
+}
+});
+
+
+
+
+
+
+
+
+if(!hero) {
+    let hero = client;
+}
+hero.on('message',async message => {
+    if(message.author.bot || message.channel.type === 'dm') return;
+    if(message.content.split(' ')[0] === `${prefix}uptime`) {
+    let uptime = hero.uptime;
+    let days = Math.round(uptime * 1.1574E-8);
+    let hours = Math.round(uptime * 2.7778E-7);
+    let minutes = Math.round(uptime * 1.6667E-5);
+    message.channel.send(`**Online** for \` ${days}D ${hours}H ${minutes}M\``);
+}
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
