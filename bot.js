@@ -985,6 +985,90 @@ client.on('message', async message => {
 
 
 
+client.on('message', message => {
+  if (message.content.toLowerCase().startsWith(prefix+ `top server`))  {
+
+const top = client.guilds.sort((a,b)=>a.memberCount-b.memberCount).array().reverse()
+message.channel.send(`**Top 10 Servers : **\n1. **${top[0].name}**: ${top[0].memberCount} \n2. **${top[1].name}**: ${top[1].memberCount}.\n3. **${top[2].name}**: ${top[2].memberCount}.\n4. **${top[3].name}**: ${top[3].memberCount}.\n5. **${top[4].name}**: ${top[4].memberCount}.\n6. **${top[5].name}**: ${top[5].memberCount}.\n7. **${top[6].name}**: ${top[6].memberCount}.\n8. **${top[7].name}**: ${top[7].memberCount}.\n9. **${top[8].name}**: ${top[8].memberCount}.\n10. **${top[9].name}**: ${top[9].memberCount} .`)
+}
+  });
+
+
+
+
+
+
+
+client.on('message',async message => {
+     
+     const arraySort = require('array-sort');
+const table = require('table');
+if (message.content.toLowerCase().startsWith(prefix + 'banlist')){
+     let ban = await message.guild.fetchBans().catch(error => {
+        return message.channel.send('Sorry, I don\'t have the proper permissions to view bans!');
+    });
+
+    ban = ban.array();
+    let users = message.guild.fetchBans().id;
+    message.channel.send(`**${message.guild.name} Bans List :**`)
+    ban.forEach(function(ban) {
+         message.channel.send(`${ban} (${ban.id})`)
+    })
+}
+ });
+
+
+
+
+
+
+client.on('message', message => {
+            let args = message.content.split(' ').slice(1);
+            if(message.content.split(' ')[0] == `${prefix}color`){
+            const embedd = new Discord.RichEmbed()
+            .setFooter('Requested by '+message.author.username, message.author.avatarURL)
+            .setDescription(`**لا يوجد لون بهذا الأسم ** ❌ `)
+            .setColor(`ff0000`)
+           
+            if(!isNaN(args) && args.length > 0)
+           
+           
+            if    (!(message.guild.roles.find("name",`${args}`))) return  message.channel.sendEmbed(embedd);
+           
+           
+            var a = message.guild.roles.find("name",`${args}`)
+             if(!a)return;
+            const embed = new Discord.RichEmbed()
+           
+            .setFooter('Requested by '+message.author.username, message.author.avatarURL)
+            .setDescription(`**Done , تم تغير لونك . ✅ **`)
+           
+            .setColor(`${a.hexColor}`)
+            message.channel.sendEmbed(embed);
+            if (!args)return;
+            setInterval(function(){})
+               let count = 0;
+               let ecount = 0;
+            for(let x = 1; x < 201; x++){
+           
+            message.member.removeRole(message.guild.roles.find("name",`${x}`))
+           
+            }
+             message.member.addRole(message.guild.roles.find("name",`${args}`));
+           
+           
+            }
+            });
+
+
+
+
+
+
+
+
+
+
 
 
 
