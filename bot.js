@@ -340,14 +340,22 @@ msg.guild.createChannel(args.join(' '), 'category');
 
 
 
-client.on('message',async message => {
-    if(message.author.bot || message.channel.type === 'dm') return;
-    if(message.content.split(' ')[0] === `${prefix}uptime`) {
-    let uptime = hero.uptime;
-    let days = Math.round(uptime * 1.1574E-8);
-    let hours = Math.round(uptime * 2.7778E-7);
-    let minutes = Math.round(uptime * 1.6667E-5);
-    message.channel.send(`**Online** for \` ${days}D ${hours}H ${minutes}M\``);
+client.on('message', function(msg) {
+if(msg.content.startsWith (prefix  + 'serverinfo')) {
+ let embed = new Discord.RichEmbed()
+ .setColor('RANDOM')
+ .setThumbnail(msg.guild.iconURL)
+ .setTitle(`Showing Details Of  **${msg.guild.name}*`)
+ .addField('🌐** نوع السيرفر**',`[** __${msg.guild.region}__ **]`,true)
+ .addField('🏅** __الرتب__**',`[** __${msg.guild.roles.size}__ **]`,true)
+ .addField('🔴**__ عدد الاعضاء__**',`[** __${msg.guild.memberCount}__ **]`,true)
+ .addField('🔵**__ عدد الاعضاء الاونلاين__**',`[** __${msg.guild.members.filter(m=>m.presence.status == 'online').size}__ **]`,true)
+ .addField('📝**__ الرومات الكتابية__**',`[** __${msg.guild.channels.filter(m => m.type === 'text').size}__** ]`,true)
+ .addField('🎤**__ رومات الصوت__**',`[** __${msg.guild.channels.filter(m => m.type === 'voice').size}__ **]`,true)
+ .addField('👑**__ الأونـر__**',`**${msg.guild.owner}**`,true)
+ .addField('🆔**__ ايدي السيرفر__**',`**${msg.guild.id}**`,true)
+ .addField('📅**__ تم عمل السيرفر في__**',msg.guild.createdAt.toLocaleString())
+ msg.channel.send({embed:embed});
 }
 });
 
