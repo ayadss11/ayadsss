@@ -21,6 +21,8 @@ console.log("log");
 
 
 
+
+
  const devs = ["441584713799303183"];
 const adminprefix = ["!"];
 client.on('message', message => {
@@ -867,7 +869,7 @@ client.on(`ready`, ()=>{
       }
     })
     setTimeout(function(){
-      ch.get("اي دي الروم").setName(`اسم الروم ⇏「${count}」`)//count = عدد الاشخاص
+      ch.get("540173264669114388").setName(`hh ⇏「${count}」`)//count = عدد الاشخاص
     }, 500)
   }, 1000)
 })
