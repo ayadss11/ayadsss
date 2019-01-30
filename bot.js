@@ -76,7 +76,7 @@ if (message.content.startsWith(adminprefix + 'setavatar')) {
 
  client.on('message',async message => {
   let mention = message.mentions.members.first();
-  let acRoom = client.channels.get('483662159277064197');
+  let acRoom = client.channels.get('506464308285276161');
   if(message.content.startsWith(prefix + "رفض")) {
   if(message.guild.id !== '470478928947970048') return;
   if(!message.guild.member(message.author).hasPermission("MANAGE_ROLES")) return;
