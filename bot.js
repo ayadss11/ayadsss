@@ -803,7 +803,7 @@ client.on('ready', () => {//new ready event
                       role.edit({color : "RANDOM"});
                   };
       });
-  }, 5000);//the rainbow time
+  }, 5500);//the rainbow time
 })
 
 
