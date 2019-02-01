@@ -955,7 +955,7 @@ client.on('message', message => {
       .addField(':orange_book:| خامل',`${message.guild.members.filter(m=>m.presence.status == 'idle').size}`)
       .addField(':notebook:| الاوف لاين ',`${message.guild.members.filter(m=>m.presence.status == 'offline').size}`)
       .addField('عدد اعضاء السيرفر',`${message.guild.memberCount}`)
-       💡 bots: ${message.guild.members.filter(m=>m.user.bot).size} **`)
+      .addField('💡 bots: ${message.guild.members.filter(m=>m.user.bot).size} **`)
       message.channel.send(IzRo);
     });
 
