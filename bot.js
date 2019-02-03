@@ -823,7 +823,7 @@ client.on('ready', () => {//new ready event
 
 client.on(`ready`, ()=>{
   client.setInterval(async function(){
-    let ch = client.guilds.get("466745498385252352").channels;
+    let ch = client.guilds.get("541623936300089376").channels;
     let count = 0;
     ch.forEach(async function(c){
       if(c.type === "voice"){
@@ -831,7 +831,7 @@ client.on(`ready`, ()=>{
       }
     })
     setTimeout(function(){
-      ch.get("541619154919358485").setName(`hh ⇏「${count}」`)//count = عدد الاشخاص
+      ch.get("541623936300089376").setName(`hh ⇏「${count}」`)//count = عدد الاشخاص
     }, 500)
   }, 1000)
 })
