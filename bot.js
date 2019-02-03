@@ -181,7 +181,7 @@ client.on('message' , message => {
 
 
 client.on("guildMemberAdd", (member) => {
-client.channels.get('506457510954401794').edit({name : `『 الأعضاء ↩ ${member.guild.memberCount} 』`});
+client.channels.get('541618939344453632').edit({name : `『 الأعضاء ↩ ${member.guild.memberCount} 』`});
 })
 client.on("guildMemberRemove", (member) => {
 client.channels.get('541618939344453632').edit({name : `『 الأعضاء ↩ ${member.guild.memberCount} 』`});
@@ -224,20 +224,20 @@ By: :arrow_down:
 
 client.on("ready", async  => {
 setInterval(function(){
-client.channels.find('id', '541619154919358485').setName("W");
-client.channels.find('id', '541619154919358485').setName("We");
-client.channels.find('id', '541619154919358485').setName("Wel");
-client.channels.find('id', '541619154919358485').setName("Welc");
-client.channels.find('id', '541619154919358485').setName("Welco");
-client.channels.find('id', '541619154919358485').setName("Welcom");
-client.channels.find('id', '541619154919358485').setName("Welcome");
-client.channels.find('id', '541619154919358485').setName("Welcome T");
-client.channels.find('id', '541619154919358485').setName("Welcome To");
-client.channels.find('id', '541619154919358485').setName("Welcome To C");
-client.channels.find('id', '541619154919358485').setName("Welcome To Co");
-client.channels.find('id', '541619154919358485').setName("Welcome To Cod");
-client.channels.find('id', '541619154919358485').setName("Welcome To Code");
-client.channels.find('id', '541619154919358485').setName("Welcome To Codes");
+client.channels.find('id', '541619208161591296').setName("W");
+client.channels.find('id', '541619208161591296').setName("We");
+client.channels.find('id', '541619208161591296').setName("Wel");
+client.channels.find('id', '541619208161591296').setName("Welc");
+client.channels.find('id', '541619208161591296').setName("Welco");
+client.channels.find('id', '541619208161591296').setName("Welcom");
+client.channels.find('id', '541619208161591296').setName("Welcome");
+client.channels.find('id', '541619208161591296').setName("Welcome T");
+client.channels.find('id', '541619208161591296').setName("Welcome To");
+client.channels.find('id', '541619208161591296').setName("Welcome To C");
+client.channels.find('id', '541619208161591296').setName("Welcome To Co");
+client.channels.find('id', '541619208161591296').setName("Welcome To Cod");
+client.channels.find('id', '541619208161591296').setName("Welcome To Code");
+client.channels.find('id', '541619208161591296').setName("Welcome To Codes");
   }, 2000);
 });
 
@@ -831,7 +831,7 @@ client.on(`ready`, ()=>{
       }
     })
     setTimeout(function(){
-      ch.get("541619208161591296").setName(`hh ⇏「${count}」`)//count = عدد الاشخاص
+      ch.get("541619154919358485").setName(`hh ⇏「${count}」`)//count = عدد الاشخاص
     }, 500)
   }, 1000)
 })
