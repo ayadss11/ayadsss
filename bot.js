@@ -182,10 +182,7 @@ client.on('message' , message => {
 
 client.on("guildMemberAdd", (member) => {
 client.channels.get('541618939344453632').edit({name : `『 الأعضاء ↩ ${member.guild.memberCount} 』`});
-})
-client.on("guildMemberRemove", (member) => {
-client.channels.get('541619154919358485').edit({name : `『 الأعضاء ↩ ${member.guild.memberCount} 』`});
-})
+
 
 
 
