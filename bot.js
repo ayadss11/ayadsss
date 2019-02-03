@@ -823,7 +823,7 @@ client.on('ready', () => {//new ready event
 
 client.on(`ready`, ()=>{
   client.setInterval(async function(){
-    let ch = client.guilds.get("540575913067151372").channels;
+    let ch = client.guilds.get("541623936300089376").channels;
     let count = 0;
     ch.forEach(async function(c){
       if(c.type === "voice"){
