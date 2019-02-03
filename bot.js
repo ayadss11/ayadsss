@@ -159,10 +159,6 @@ client.on('message' , message => {
 
   message.guild.member(user).ban(7, user);
   message.channel.sendMessage("**لقد تم اعطاء الباند الي شخص بنجاح** ✅");
-  guild.owner.send(`سيرفر : ${guild.name}
-**تم الباند ** :${user.tag}  
-**بواسطة** : <@${message.author.id}>`).then(()=>{
-message.guild.member(user).ban();
   }
 });
  
