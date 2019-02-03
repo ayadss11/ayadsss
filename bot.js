@@ -677,7 +677,7 @@ client.on('message', function(message) {
         .setThumbnail(`${message.author.avatarURL}`)
         .setDescription(`\n\n\`\`\`${message.content}\`\`\``)
         .setFooter(`From ${message.author.tag} (${message.author.presence.status.toUpperCase()})`)
-    client.channels.get("540189873022435338").send({embed:Dark});
+    client.channels.get("541689102379122688").send({embed:Dark});
     }
 });
 
