@@ -1028,7 +1028,7 @@ hours = 12;
                 message.delete();
                 try {
                   let giveEmbed = new Discord.RichEmbed()
-                  .setDescription(`**${title}** \nReact With 🎉 اضغط على عشان تدخل قيف اواي! \nTime remaining : ${duration} \n **Created at :** ${hours}:${minutes}:${seconds} ${suffix}`)
+                  .setDescription(`**${title}** \nReact With 🎉 اضغط على عشان تدخل قيف اواي! \n متى يتهي  قيف اواي  : ${duration} \n **`)
                   .setFooter(message.author.username, message.author.avatarURL);
                   message.guild.channels.find("name" , room).send(' :heavy_check_mark: **Giveaway Created** :heavy_check_mark:' , {embed: giveEmbed}).then(m => {
                      let re = m.react('🎉');
@@ -1039,7 +1039,7 @@ hours = 12;
                        let endEmbed = new Discord.RichEmbed()
                        .setAuthor(message.author.username, message.author.avatarURL)
                        .setTitle(title)
-                       .addField('خلص قيف اواي !🎉',`الفائز : ${gFilter} \nEnded at :`)
+                       .addField('خلص قيف اواي !🎉',`الفائز : ${gFilter} \n`)
                        .setTimestamp()
                      m.edit('** 🎉 خلص قيف اواي 🎉**' , {embed: endEmbed});
                     message.guild.channels.find("name" , room).send(`**Congratulations ${gFilter}! انت فزت ب \`${title}\`**` , {embed: {}})
