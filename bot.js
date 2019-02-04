@@ -1028,9 +1028,9 @@ hours = 12;
                 message.delete();
                 try {
                   let giveEmbed = new Discord.RichEmbed()
-                  .setDescription(`**${title}** \nReact With 🎉 اضغط على عشان تدخل قيف اواي! \n متى يتهي  قيف اواي  : ${duration} \n **`)
+                  .setDescription(`**${title}** \nReact With 🎉 اضغط على عشان تدخل قيف اواي! \nمتى يتهي  قيف اواي  : ${duration} \n `)
                   .setFooter(message.author.username, message.author.avatarURL);
-                  message.guild.channels.find("name" , room).send(' :heavy_check_mark: **Giveaway Created** :heavy_check_mark:' , {embed: giveEmbed}).then(m => {
+                  message.guild.channels.find("name" , room).send(' :heavy_check_mark: **القيف اواي** :heavy_check_mark:' , {embed: giveEmbed}).then(m => {
                      let re = m.react('🎉');
                      setTimeout(() => {
                        let users = m.reactions.get("🎉").users
