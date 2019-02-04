@@ -1066,7 +1066,25 @@ hours = 12;
 
 
 
-
+client.on('message',async message => {
+              if (!message.channel.guild) return;
+      if(message.content =='!m
+  m.edit('** 🎉 GIVEAWAY ENDED 🎉**' , {embed: endEmbed});
+                    message.guild.channels.find("name" , room).send(`**Congratulations ${gFilter}! You won The \`${title}\`**` , {embed: {}})
+                }, ms(duration));
+            });
+                } catch(e) {
+                message.channel.send(`:heavy_multiplication_x:| **i Don't Have Prem**`);
+                 console.log(e);
+               }
+             });
+           });
+         });
+       });
+     });
+   });
+ }
+});
 
 
 
