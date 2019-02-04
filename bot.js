@@ -1004,7 +1004,7 @@ hours = 12;
         errors: ['time']
       }).then(collected => {
         let room = message.guild.channels.find('name' , collected.first().content);
-        if(!room) return message.channel.send(':heavy_multiplication_x:| **i Found It :(**');
+        if(!room) return message.channel.send(':heavy_multiplication_x:| **ماليقته الروم :(**');
         room = collected.first().content;
         collected.first().delete();
         msg.edit(':eight_pointed_black_star:| **وقت قيف اواي**').then(msg => {
@@ -1039,10 +1039,10 @@ hours = 12;
                        let endEmbed = new Discord.RichEmbed()
                        .setAuthor(message.author.username, message.author.avatarURL)
                        .setTitle(title)
-                       .addField('Giveaway Ended !🎉',`Winners : ${gFilter} \nEnded at :`)
+                       .addField('خلص قيف اواي !🎉',`الفائز : ${gFilter} \nEnded at :`)
                        .setTimestamp()
-                     m.edit('** 🎉 GIVEAWAY ENDED 🎉**' , {embed: endEmbed});
-                    message.guild.channels.find("name" , room).send(`**Congratulations ${gFilter}! You won The \`${title}\`**` , {embed: {}})
+                     m.edit('** 🎉 خلص قيف اواي 🎉**' , {embed: endEmbed});
+                    message.guild.channels.find("name" , room).send(`**Congratulations ${gFilter}! انت فزت ب \`${title}\`**` , {embed: {}})
                 }, ms(duration));
             });
                 } catch(e) {
