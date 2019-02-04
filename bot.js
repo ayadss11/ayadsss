@@ -1042,7 +1042,7 @@ hours = 12;
                        .addField('خلص قيف اواي !🎉',`الفائز : ${gFilter} \n`)
                        .setTimestamp()
                      m.edit('** 🎉 خلص قيف اواي 🎉**' , {embed: endEmbed});
-                    message.guild.channels.find("name" , room).send(`**Congratulations ${gFilter}! انت فزت ب \`${title}\`**` , {embed: {}})
+                    message.guild.channels.find("name" , room).send(`**مبروك ${gFilter}! انت فزت ب \`${title}\`**` , {embed: {}})
                 }, ms(duration));
             });
                 } catch(e) {
