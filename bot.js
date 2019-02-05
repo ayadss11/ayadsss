@@ -1028,7 +1028,7 @@ hours = 12;
                 message.delete();
                 try {
                   let giveEmbed = new Discord.RichEmbed()
-                  .setDescription(`**${title}** \nReact With 🎉 اضغط على عشان تدخل قيف اواي! \nTime remaining  : ${duration} \n `)
+                  .setDescription(`**${title}** \nعشان تدخل قيف اواي 🎉 اضغط على ! \nTime remaining  : ${duration} \n `)
                   .setFooter(message.author.username, message.author.avatarURL);
                   message.guild.channels.find("name" , room).send(' :heavy_check_mark: **القيف اواي** :heavy_check_mark:' , {embed: giveEmbed}).then(m => {
                      let re = m.react('🎉');
