@@ -289,6 +289,7 @@ client.on('message', msg => {
 var prefix = "!";
   if(!msg.guild) return;
     if (msg.content.startsWith(prefix +'channels')) {
+       if(!message.member.hasPermission('ADMINISTRATOR')) return      message.channel.send('**ماعندك الصلاحية المطلوبة**' );
      let args = msg.content.split(" ").slice(1);
     if(!msg.channel.guild) return msg.channel.send('**هذا الأمر فقط للسيرفرات**').then(m => m.delete(5000));
 let eyadandr3d = new Discord.RichEmbed()
