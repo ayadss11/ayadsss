@@ -289,16 +289,17 @@ client.on('message', msg => {
 var prefix = "!";
   if(!msg.guild) return;
     if (msg.content.startsWith(prefix +'channels')) {
-       if(!message.member.hasPermission('ADMINISTRATOR')) return      message.channel.send('**ماعندك الصلاحية المطلوبة**' );
      let args = msg.content.split(" ").slice(1);
     if(!msg.channel.guild) return msg.channel.send('**هذا الأمر فقط للسيرفرات**').then(m => m.delete(5000));
-let eyadandr3d = new Discord.RichEmbed()
+    let eyadandr3d = new Discord.RichEmbed()
 .setThumbnail(msg.author.avatarURL)
 .setDescription(`                            📝ان كنت تريد انشاء روم صوتي اظغط علي الايموجي🎤                                                                                                                                                                                     الان كنت تريد انشاء مستند اضغط علي الايموجي                                                                                                                                                                                                                                                      
  ✏ان كنت تريد انشاء شات كتابي اظغط علي الايموجي `)
 .setFooter('لديك دقيقه للاختيار')
 msg.channel.send(eyadandr3d).then(message => {
-   
+if(!message.member.hasPermission('ADMINISTRATOR')) return      message.channel.send('**ماعندك الصلاحية المطلوبة**' );
+
+ 
    
  message.react('✏').then(r=>{
  message.react('🎤').then(r=>{
