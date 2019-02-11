@@ -9,6 +9,31 @@ console.log("log");
 
 
 
+
+
+client.on('message', dark => {
+    
+    if (dark.content === "!tt") {
+        setInterval(function(){
+        dark.edit('**C**')    
+        dark.edit('**Co**')    
+        dark.edit('**Cod**')
+        dark.edit('**Code**')
+        }, 900)
+    }
+    
+})
+
+
+
+
+
+
+
+
+
+
+
 client.on('message', message => {
     let args = message.content.split(' ').slice(1);
 
