@@ -9,9 +9,6 @@ console.log("log");
 
 
 
-
-
-
 client.on('message', message => {
     let args = message.content.split(' ').slice(1);
 
@@ -25,6 +22,7 @@ client.on('message', message => {
         });
     };
 })
+
 
 
 
@@ -1450,12 +1448,7 @@ message.guild.members.filter(m => m.presence.status === 'online').forEach(m => {
 
 
 
-client.on("guildMemberAdd", (member) => {
-client.channels.get('544575559514980402').edit({name : `『 الأعضاء ↩ ${member.guild.memberCount} 』`});
-})
-client.on("guildMemberRemove", (member) => {
-client.channels.get('544575559514980402').edit({name : `『 الأعضاء ↩ ${member.guild.memberCount} 』`});
-})
+
 
 
 
