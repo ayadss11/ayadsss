@@ -12,10 +12,6 @@ console.log("log");
 
 
 
-client.on('ready', () => {
-    console.log('ready');
-});
-
 client.on('message', message => {
     let args = message.content.split(' ').slice(1);
 
