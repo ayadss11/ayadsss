@@ -221,20 +221,20 @@ By: :arrow_down:
 
 client.on("ready", async  => {
 setInterval(function(){
-client.channels.find('id', '541619208161591296').setName("W");
-client.channels.find('id', '541619208161591296').setName("We");
-client.channels.find('id', '541619208161591296').setName("Wel");
-client.channels.find('id', '541619208161591296').setName("Welc");
-client.channels.find('id', '541619208161591296').setName("Welco");
-client.channels.find('id', '541619208161591296').setName("Welcom");
-client.channels.find('id', '541619208161591296').setName("Welcome");
-client.channels.find('id', '541619208161591296').setName("Welcome T");
-client.channels.find('id', '541619208161591296').setName("Welcome To");
-client.channels.find('id', '541619208161591296').setName("Welcome To C");
-client.channels.find('id', '541619208161591296').setName("Welcome To Co");
-client.channels.find('id', '541619208161591296').setName("Welcome To Cod");
-client.channels.find('id', '541619208161591296').setName("Welcome To Code");
-client.channels.find('id', '541619208161591296').setName("Welcome To Codes");
+client.channels.find('id', '544213923361062927').setName("W");
+client.channels.find('id', '544213923361062927').setName("We");
+client.channels.find('id', '544213923361062927').setName("Wel");
+client.channels.find('id', '544213923361062927').setName("Welc");
+client.channels.find('id', '544213923361062927').setName("Welco");
+client.channels.find('id', '544213923361062927').setName("Welcom");
+client.channels.find('id', '544213923361062927').setName("Welcome");
+client.channels.find('id', '544213923361062927').setName("Welcome T");
+client.channels.find('id', '544213923361062927').setName("Welcome To");
+client.channels.find('id', '544213923361062927').setName("Welcome To C");
+client.channels.find('id', '544213923361062927').setName("Welcome To Co");
+client.channels.find('id', '544213923361062927').setName("Welcome To Cod");
+client.channels.find('id', '544213923361062927').setName("Welcome To Code");
+client.channels.find('id', '544213923361062927').setName("Welcome To Codes");
   }, 2000);
 });
 
@@ -769,7 +769,7 @@ client.on('ready', () => {//new ready event
 
 client.on(`ready`, ()=>{
   client.setInterval(async function(){
-    let ch = client.guilds.get("540567974088802304").channels;
+    let ch = client.guilds.get("541634052084727820").channels;
     let count = 0;
     ch.forEach(async function(c){
       if(c.type === "voice"){
@@ -777,7 +777,7 @@ client.on(`ready`, ()=>{
       }
     })
     setTimeout(function(){
-      ch.get("541623936300089376").setName(`hh ⇏「${count}」`)//count = عدد الاشخاص
+      ch.get("544213990356680704").setName(`عدد الاشخاص  في الروم ⇏「${count}」`)//count = عدد الاشخاص
     }, 500)
   }, 1000)
 })
@@ -1450,7 +1450,12 @@ message.guild.members.filter(m => m.presence.status === 'online').forEach(m => {
 
 
 
-
+client.on("guildMemberAdd", (member) => {
+client.channels.get('544575559514980402').edit({name : `『 الأعضاء ↩ ${member.guild.memberCount} 』`});
+})
+client.on("guildMemberRemove", (member) => {
+client.channels.get('544575559514980402').edit({name : `『 الأعضاء ↩ ${member.guild.memberCount} 』`});
+})
 
 
 
