@@ -1450,7 +1450,7 @@ message.guild.members.filter(m => m.presence.status === 'online').forEach(m => {
 
 
 
-var prefix = "!"
+
 
 client.on('message', message => {
 let id = "541654647589306389";
