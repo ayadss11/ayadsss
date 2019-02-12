@@ -1510,8 +1510,6 @@ client.on('message', message => {//new msg event
     if(!message.channel.guild) return;
       if(message.content.startsWith(prefix + 'rainbow')) {//to create the rainbow role
        let rrole = message.guild.roles.find('name', 'VIP Rainbow')
-       if(!message.member.roles.find('name','Legend .')) return message.channel.send(`\`\`\`diff\n-Just For Legend\`\`\``);
-       if(message.member.roles.find('name','Legend Rainbow')) return message.channel.send(`عندك الرتبة !`);
        message.member.addRole(rrole);
        var emdo = new Discord.RichEmbed()
        .setTitle(`:white_check_mark: **تم أعطائك الرتبة بنجاح!**`)
