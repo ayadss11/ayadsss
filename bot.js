@@ -1461,7 +1461,7 @@ if(!message.channel.guild) return;
 if(message.member.roles.find("name", viprole)) return message.reply(`**انت تمتلك الرتبه بالفعل!**`);
 let rolefind = message.guild.roles.find("name", viprole);
 if(!rolefind) return message.reply(`لا يوجد \`${viprole}\``)
-message.channel.send(`للشراء الرتبة قم بتحويل مبلغ 10 الاف كرديت
+message.channel.send(` للشراء الرتبة قم بتحويل مبلغ 10 الاف كرديت برو بوت لديك 4 دقائق فقط للتحويل
 لـ ${message.guild.members.get(id)}`).then(SO => {
     const filter = response => response.author.id == "282859044593598464" && response.mentions._content.includes(`:moneybag: | ${message.author.username}, has transferred \`$9900\` to ${message.guild.members.get(id)}`);
 
