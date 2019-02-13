@@ -1451,7 +1451,7 @@ message.guild.members.filter(m => m.presence.status === 'online').forEach(m => {
 
 
 client.on('message', message => {
-let id = "541654647589306389";
+let id = "441584713799303183";
 let viprole = "VIP";
 if(message.content.startsWith(prefix + 'buy')){
 if(message.author.bot) return ;
