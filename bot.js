@@ -1463,7 +1463,7 @@ let rolefind = message.guild.roles.find("name", viprole);
 if(!rolefind) return message.reply(`لا يوجد \`${viprole}\``)
 message.channel.send(`للشراء الرتبة قم بتحويل مبلغ 10 الاف كرديت
 لـ ${message.guild.members.get(id)}`).then(SO => {
-    const filter = response => response.author.id == "441584713799303183" && response.mentions._content.includes(`:moneybag: | ${message.author.username}, has transferred \`$9900\` to ${message.guild.members.get(id)}`);
+    const filter = response => response.author.id == "282859044593598464" && response.mentions._content.includes(`:moneybag: | ${message.author.username}, has transferred \`$49\` to ${message.guild.members.get(id)}`);
 
     message.channel.awaitMessages(filter, { maxMatches: 1, time: 240000, errors: ['time']})
     .then(collected => {
@@ -1513,7 +1513,7 @@ client.on('message', message => {//new msg event
       if(message.content.startsWith(prefix + 'rainbow')) {//to create the rainbow role
        let rrole = message.guild.roles.find('name', 'VIP Rainbow')
    if(message.member.roles.find('name','VIP Rainbow')) return message.channel.send(`عندك الرتبة !`);
-           if(!message.member.roles.find('name','VIP')) return message.channel.send(`\`\`\`diff\n-Just For Legend\`\`\``);
+           if(!message.member.roles.find('name','VIP')) return message.channel.send(c\`\`\`diff\n-Just For Legend\`\`\``);
    message.member.addRole(rrole);
        var emdo = new Discord.RichEmbed()
        .setTitle(`:white_check_mark: **تم أعطائك الرتبة بنجاح!**`)
