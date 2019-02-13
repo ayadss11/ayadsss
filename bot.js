@@ -1465,8 +1465,8 @@ message.channel.send(` للشراء الرتبة قم بتحويل مبلغ 10 �
                     لـ${message.guild.members.get(id)}`).then(SO => {
     const filter = response => response.author.id == "282859044593598464" && response.mentions._content.includes(`:moneybag: | ${message.author.username}, has transferred \`$9900\` to ${message.guild.members.get(id)}`);
 
-    message.channel.awaitMessages(filter, { maxMatches: 1, time: 240000, errors: ['time']}).setDescription(`**Done , تم تغير لونك . ✅ **`)
-
+    message.channel.awaitMessages(filter, { maxMatches: 1, time: 240000, errors: ['time']})
+     .setDescription(`**Done , تم تغير لونك . ✅ **`)
     .then(collected => {
         SO.delete()
         var giveembed = new Discord.RichEmbed()
