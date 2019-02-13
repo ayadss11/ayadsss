@@ -1462,7 +1462,14 @@ if(message.member.roles.find("name", viprole)) return message.reply(`**انت ت
 let rolefind = message.guild.roles.find("name", viprole);
 if(!rolefind) return message.reply(`لا يوجد \`${viprole}\``)
 message.channel.send(` للشراء الرتبة قم بتحويل مبلغ 10 الاف كرديت برو بوت لديك 4 دقائق فقط للتحويل
-لـ ${message.guild.members.get(id)}`).then(SO => {
+ .then((collected) => {
+                        message.channel.delete();
+                    })
+                    .catch(() => {
+                        m.edit('Ticket close timed out, the ticket was not closed.').then(m2 => {
+                            m2.delete();
+                        }, 50000);
+                    لـ${message.guild.members.get(id)}`).then(SO => {
     const filter = response => response.author.id == "282859044593598464" && response.mentions._content.includes(`:moneybag: | ${message.author.username}, has transferred \`$9900\` to ${message.guild.members.get(id)}`);
 
     message.channel.awaitMessages(filter, { maxMatches: 1, time: 240000, errors: ['time']})
@@ -1576,7 +1583,7 @@ client.on("message", (message) => {
                     .catch(() => {
                         m.edit('Ticket close timed out, the ticket was not closed.').then(m2 => {
                             m2.delete();
-                        }, 3000);
+                        }, 50000);
                     });
             });
     }
