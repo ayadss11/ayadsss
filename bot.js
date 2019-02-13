@@ -1450,9 +1450,8 @@ message.guild.members.filter(m => m.presence.status === 'online').forEach(m => {
 
 
 
-
 client.on('message', message => {
-let id = "441584713799303183";
+let id = "541654647589306389";
 let viprole = "VIP";
 if(message.content.startsWith(prefix + 'buy')){
 if(message.author.bot) return ;
@@ -1460,7 +1459,7 @@ if(!message.channel.guild) return;
 if(message.member.roles.find("name", viprole)) return message.reply(`**انت تمتلك الرتبه بالفعل!**`);
 let rolefind = message.guild.roles.find("name", viprole);
 if(!rolefind) return message.reply(`لا يوجد \`${viprole}\``)
-message.channel.send(`للشراء الرتبة قم بتحويل مبلغ 10 الاف كرديت برو بوت لديك 4 دقائق فقط للتحويل
+message.channel.send(`للشراء الرتبة قم بتحويل مبلغ 10 الاف كرديت
 لـ ${message.guild.members.get(id)}`).then(SO => {
     const filter = response => response.author.id == "282859044593598464" && response.mentions._content.includes(`:moneybag: | ${message.author.username}, has transferred \`$9900\` to ${message.guild.members.get(id)}`);
 
