@@ -1526,21 +1526,6 @@ client.on('message', message => {//new msg event
 
 
 
-client.on('message', message => {//mrx - dev
-    if (message.content.startsWith(prefix + 'reject')) {//mrx - dev
-        if (message.author.bot) return;//mrx - dev
-        if (!message.guild) return;//mrx - dev
-        let Room = message.guild.channels.find(`name`, 'results');//mrx - dev
-        let user = message.mentions.users.first();//mrx - dev
-        let embedreject = new Discord.RichEmbed()//mrx - dev
-        .setColor('RANDOM')//mrx - dev
-        .setAuthor(user.username,user.avatarURL)//mrx - dev
-        .setTitle('» [ :x: ] :: - `تم رفض العضو .`')//mrx - dev
-        .setThumbnail(message.author.avatarURL)//mrx - dev
-        Room.sendEmbed(embedreject);//mrx - dev
-    }
-});
-
 
 
 
