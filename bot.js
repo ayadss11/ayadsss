@@ -1,4 +1,4 @@
-const prefix ="!";
+onst prefix ="!";
 const Discord = require('discord.js');
 const client = new Discord.Client();
 
