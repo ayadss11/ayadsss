@@ -45,7 +45,7 @@ client.on('message', message => {
 
 
  const devs = ["441584713799303183"];
-const adminprefix = ["!"];
+const adminprefix = ["!_"];
 client.on('message', message => {
     var argresult = message.content.split(` `).slice(1).join(' ');
       if (!devs.includes(message.author.id)) return;
@@ -69,11 +69,11 @@ client.on('message', message => {
     client.user.setGame(argresult, "https://www.twitch.tv/idk");
       message.channel.send(`**✅**`)
   }
-  if (message.content.startsWith(adminprefix + 'setname!')) {
+  if (message.content.startsWith(adminprefix + 'setname')) {
   client.user.setUsername(argresult).then
       message.channel.send(`Changing The Name To ..**${argresult}** `)
 } else
-if (message.content.startsWith(adminprefix + 'setavatar!')) {
+if (message.content.startsWith(adminprefix + 'setavatar')) {
   client.user.setAvatar(argresult);
     message.channel.send(`Changing The Avatar To :**${argresult}** `);
 }
@@ -764,21 +764,6 @@ client.on('ready', () => {//new ready event
 
 
 
-
-client.on(`ready`, ()=>{
-  client.setInterval(async function(){
-    let ch = client.guilds.get("541634052084727820").channels;
-    let count = 0;
-    ch.forEach(async function(c){
-      if(c.type === "voice"){
-        c.members.forEach(()=>count++);
-      }
-    })
-    setTimeout(function(){
-      ch.get("544213990356680704").setName(`عدد الاشخاص  في الروم ⇏「${count}」`)//count = عدد الاشخاص
-    }, 500)
-  }, 1000)
-})
 
 
 
