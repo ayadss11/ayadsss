@@ -993,10 +993,8 @@ if(message.channel.type === 'dm') return;
      .then(() =>  msg.react('📧'))
      .then(() => msg.react('🔵'))
      .then(() => msg.react('🔷'))
-     .then(() => msg.react('🌕'))
-     .then(() => msg.react('🌖'))
      .then(() => msg.react('❌'))
-
+ 
  
              let embedmsgFilter = (reaction, user) => reaction.emoji.name === '📭' && user.id === message.author.id;
  
@@ -1011,11 +1009,7 @@ if(message.channel.type === 'dm') return;
              let embedonlineonlyFilter = (reaction, user) => reaction.emoji.name === '🔷' && user.id === message.author.id;8
  
              let embedonlyroleFilter = (reaction, user) => reaction.emoji.name === '🏅' && user.id === message.author.id;8
-  
-              let embedonlineonlyFilter = (reaction, user) => reaction.emoji.name === '🌕' && user.id === message.author.id;8
-  
-               let onlineonlyFilter = (reaction, user) => reaction.emoji.name === '🌖' && user.id === message.author.id;8
-
+ 
              let embedmsg = msg.createReactionCollector(embedmsgFilter, { time: 0 });
  
              let normalmsg = msg.createReactionCollector(normalmsgFilter, { time: 0 });
