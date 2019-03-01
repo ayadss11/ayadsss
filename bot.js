@@ -519,7 +519,7 @@ if(!message.channel.guild) return message.reply(' ');
  
                 collected.first().delete();
  
-              boi2 = collected.first().content;
+              boi4 = collected.first().content;
 
             })
 
@@ -570,7 +570,7 @@ if(!message.channel.guild) return message.reply(' ');
  
           collected.first().delete();
  
-          submite.send(`@everyone | @here
+          submite.send(`
 =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 **[ ${message.guild.name}:arrow_down: ] Submite⬇**
  
@@ -613,7 +613,6 @@ ${message.author.id}`);
 );
  
     })}});
-
 
 
 
