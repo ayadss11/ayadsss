@@ -527,15 +527,7 @@ if(!message.channel.guild) return message.reply(' ');
  
             msg.edit('🤵 **| اذا صرت من الادارة وش رح تقدم للسرفر... ✏ **').then(msg => {
  
-       message.channel.awaitMessages(filter, {
- 
-            max: 1,
- 
-            time: 90000,
- 
-            errors: ['time']
- 
-          })
+
  
           .then(collected => {
  
@@ -550,7 +542,7 @@ if(!message.channel.guild) return message.reply(' ');
  
                 collected.first().delete();
  
-              boi2 = collected.first().content;
+              boi9 = collected.first().content;
  
       msg.edit('🛡 **| [ هل انت متأكد من تقديمك؟ | [ نعم ] او [ لا**');
  
