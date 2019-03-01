@@ -438,7 +438,6 @@ client.on("guildMemberAdd", member => {
 
 
 
-
 var guilds = {};
 client.on('message',async message => {
  var prefix2 = '!';//البرفكس
@@ -497,7 +496,7 @@ if(!message.channel.guild) return message.reply(' ');
  
             collected.first().delete();
  
-            boi = collected.first().content;
+            boi2 = collected.first().content;
  
             let boi2;
  
@@ -519,13 +518,16 @@ if(!message.channel.guild) return message.reply(' ');
  
                 collected.first().delete();
  
-              boi4 = collected.first().content;
+              ayad = collected.first().content;
 
             })
 
-              let boi4;
+              let ayad;
    
-              msg.edit('🤵 **| 33من فضلك اكتب من اي بلد انت الأن... ✏ **').then(msg => {
+              message.channel.send('📝 **| من فضلك اكتب اسمك الأتييببلن... ✏ **').then(msg => {
+
+
+                
                 message.channel.awaitMessages(filter, {
    
                   max: 1,
@@ -583,8 +585,8 @@ ${boi}
 [**من بلد**]:
 
 ${boi2}
-[**من بffلد**]:
-${boi4}
+[**من ببببيلد**]:
+${ayad}
  
 [**تم التقديم بواسطة**]:
 ${message.author}
