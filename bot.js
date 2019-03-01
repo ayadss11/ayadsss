@@ -268,7 +268,6 @@ client.on('message', message => {
 
 
 client.on('message', msg => {
-var prefix = "!";
   if(!msg.guild) return;
     if (msg.content.startsWith(prefix +'channels')) {
      let args = msg.content.split(" ").slice(1);
@@ -350,7 +349,6 @@ if(msg.content.startsWith (prefix  + 'serverinfo')) {
 
 
 client.on('message', message => {
-    var prefix = "!";
      if(message.content === prefix + "mc") {
      if(!message.channel.guild) return message.reply('** This command only for servers**');
                     
@@ -443,8 +441,7 @@ client.on("guildMemberAdd", member => {
 
 var guilds = {};
 client.on('message',async message => {
- var prefix2 = '!';//البرفكس
-  if(message.content.startsWith(prefix2 + "تقديم")) {
+  if(message.content.startsWith(prefix + "تقديم")) {
  
 if(!message.channel.guild) return message.reply(' ');
  
