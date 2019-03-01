@@ -451,6 +451,7 @@ console.log("log");
 
 
 
+
 var guilds = {};
 client.on('message',async message => {
  var prefix2 = '!';//البرفكس
@@ -533,12 +534,30 @@ if(!message.channel.guild) return message.reply(' ');
  
               boi2 = collected.first().content;
 
+            })
 
-              
+   
+              let boi4;
+   
+              msg.edit('🤵 **| 33من فضلك اكتب من اي بلد انت الأن... ✏ **').then(msg => {
+   
+   
+   
+                message.channel.awaitMessages(filter, {
+   
+                  max: 1,
+   
+                  time: 90000,
+   
+                  errors: ['time']
+   
+                })
+   
+
  
       msg.edit('🛡 **| [ هل انت متأكد من تقديمك؟ | [ نعم ] او [ لا**');
  
- message.channel.awaitMessages(response => response.content === '' || '' && filter,{
+ message.channel.awaitMessages(response => response.content === 'نعم' || 'لا' && filter,{
  
         max: 1,
  
@@ -550,7 +569,7 @@ if(!message.channel.guild) return message.reply(' ');
  
       .then(collected => {
  
-        if(collected.first().content === '') {
+        if(collected.first().content === 'لا') {
  
           msg.delete();
  
@@ -560,7 +579,7 @@ if(!message.channel.guild) return message.reply(' ');
  
         }
  
-        if(collected.first().content === '') {
+        if(collected.first().content === 'نعم') {
  
           if(thisFalse === false) return;
  
@@ -579,7 +598,10 @@ ${thisMessage}
 ${boi}
  
 [**من بلد**]:
+
 ${boi2}
+[**من بffلد**]:
+${boi4}
  
 [**تم التقديم بواسطة**]:
 ${message.author}
