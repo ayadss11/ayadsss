@@ -434,10 +434,6 @@ client.on("guildMemberAdd", member => {
 
 
 
-
-
-
-
 var guilds = {};
 client.on('message',async message => {
  var prefix2 = '!';//البرفكس
@@ -496,7 +492,7 @@ if(!message.channel.guild) return message.reply(' ');
  
             collected.first().delete();
  
-            boi2 = collected.first().content;
+            boi = collected.first().content;
  
             let boi2;
  
@@ -518,7 +514,7 @@ if(!message.channel.guild) return message.reply(' ');
  
                 collected.first().delete();
  
-              ayad = collected.first().content;
+                boi2 = collected.first().content;
 
             })
 
@@ -537,7 +533,14 @@ if(!message.channel.guild) return message.reply(' ');
                   errors: ['time']
            
                 })
-           
+ 
+                .then(collected => {
+   
+                  collected.first().delete();
+   
+                  ayad = collected.first().content;
+  
+              })           
 
  
       msg.edit('🛡 **| [ هل انت متأكد من تقديمك؟ | [ نعم ] او [ لا**');
@@ -585,7 +588,7 @@ ${boi}
 [**من بلد**]:
 
 ${boi2}
-[**من ببببيلد**]:
+[**من بffلد**]:
 ${ayad}
  
 [**تم التقديم بواسطة**]:
@@ -615,6 +618,9 @@ ${message.author.id}`);
 );
  
     })}});
+
+
+
 
 
 
