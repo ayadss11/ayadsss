@@ -510,6 +510,11 @@ if(!message.channel.guild) return message.reply(' ');
                 errors: ['time']
  
               })
+             
+             
+            let boi22;
+ 
+            msg.edit(':thinking:  **| اذا صرت من الادارة وش رح تقدم للسرفر... ✏ **').then(msg => {
  
               .then(collected => {
  
@@ -561,6 +566,9 @@ ${boi}
  
 [**من بلد**]:
 ${boi2}
+
+[**وش رح يقدم للسرفر**]:
+${boi22}
  
 [**تم التقديم بواسطة**]:
 ${message.author}
