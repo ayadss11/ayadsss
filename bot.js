@@ -433,7 +433,6 @@ client.on("guildMemberAdd", member => {
 
 
 
-
 var guilds = {};
 client.on('message',async message => {
  var prefix2 = '!';//البرفكس
@@ -524,17 +523,9 @@ if(!message.channel.guild) return message.reply(' ');
 
 
                 
-                message.channel.awaitMessages(filter, {
-   
-                  max: 1,
+
  
-                  time: 90000,
-           
-                  errors: ['time']
-           
-                })
- 
-                .then(collected => {
+                then(collected => {
    
                   collected.first().delete();
    
@@ -618,6 +609,8 @@ ${message.author.id}`);
 );
  
     })}});
+
+
 
 
 
