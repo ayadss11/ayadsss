@@ -435,6 +435,22 @@ client.on("guildMemberAdd", member => {
 
 
 
+const prefix ="!";
+const Discord = require('discord.js');
+const client = new Discord.Client();
+exports.client = client;
+
+client.on('ready', () => {
+ console.log("هلا التوت شغل تمم "); 
+console.log("log");
+});
+
+
+
+
+
+
+
 var guilds = {};
 client.on('message',async message => {
  var prefix2 = '!';//البرفكس
@@ -478,9 +494,6 @@ if(!message.channel.guild) return message.reply(' ');
       msg.edit('📜 **| من فضلك اكتب عمرك  الأن... ✏ **').then(msg => {
  
  
-       
-       
-       
  
           message.channel.awaitMessages(filter, {
  
@@ -502,51 +515,30 @@ if(!message.channel.guild) return message.reply(' ');
  
             msg.edit('🤵 **| من فضلك اكتب من اي بلد انت الأن... ✏ **').then(msg => {
  
-   
-             
+ 
+ 
               message.channel.awaitMessages(filter, {
  
-            max: 1,
+                max: 1,
  
-            time: 90000,
+                time: 90000,
  
-            errors: ['time']
+                errors: ['time']
  
-          })
+              })
  
-          .then(collected => {
- 
-            collected.first().delete();
- 
-            boi = collected.first().content;
-               
-               
-               
- 
-            let boi9;
- 
-            msg.edit('🤵 **| اذا صرت من الادارة وش رح تقدم للسرفر... ✏ **').then(msg => {
- 
-
- 
-          .then(collected => {
- 
-            collected.first().delete();
- 
-            boi = collected.first().content;
-                                      
-                                      
-                                      
-             
               .then(collected => {
  
                 collected.first().delete();
  
-              boi9 = collected.first().content;
+              boi2 = collected.first().content;
+
+
+              
  
       msg.edit('🛡 **| [ هل انت متأكد من تقديمك؟ | [ نعم ] او [ لا**');
  
- message.channel.awaitMessages(response => response.content === 'نعم' || 'لا' && filter,{
+ message.channel.awaitMessages(response => response.content === '' || '' && filter,{
  
         max: 1,
  
@@ -558,7 +550,7 @@ if(!message.channel.guild) return message.reply(' ');
  
       .then(collected => {
  
-        if(collected.first().content === 'لا') {
+        if(collected.first().content === '') {
  
           msg.delete();
  
@@ -568,7 +560,7 @@ if(!message.channel.guild) return message.reply(' ');
  
         }
  
-        if(collected.first().content === 'نعم') {
+        if(collected.first().content === '') {
  
           if(thisFalse === false) return;
  
@@ -588,9 +580,6 @@ ${boi}
  
 [**من بلد**]:
 ${boi2}
-
-[**وش رح يقدم للسرفر**]:
-${boi9}
  
 [**تم التقديم بواسطة**]:
 ${message.author}
@@ -619,6 +608,11 @@ ${message.author.id}`);
 );
  
     })}});
+
+
+
+
+client.login(process.env.TOKEN); 
 
 
 
