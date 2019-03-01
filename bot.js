@@ -432,7 +432,6 @@ client.on("guildMemberAdd", member => {
 
 
 
-
 var guilds = {};
 client.on('message',async message => {
  var prefix2 = '!';//البرفكس
@@ -531,9 +530,20 @@ if(!message.channel.guild) return message.reply(' ');
    
                   ayad = collected.first().content;
   
-              })           
-
+              })          
+              
+              
+              
+              then(collected => {
+   
+                collected.first().delete();
  
+                ayad11 = collected.first().content;
+
+            })          
+            
+              let ayad11;
+
       msg.edit('🛡 **| [ هل انت متأكد من تقديمك؟ | [ نعم ] او [ لا**');
  
  message.channel.awaitMessages(response => response.content === 'نعم' || 'لا' && filter,{
@@ -609,7 +619,6 @@ ${message.author.id}`);
 );
  
     })}});
-
 
 
 
