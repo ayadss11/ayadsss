@@ -499,23 +499,36 @@ if(!message.channel.guild) return message.reply(' ');
  
             msg.edit('🤵 **| من فضلك اكتب من اي بلد انت الأن... ✏ **').then(msg => {
  
- 
- 
-              message.channel.awaitMessages(filter, {
- 
-                max: 1,
- 
-                time: 90000,
- 
-                errors: ['time']
- 
-              })
+  
+          
              
              
-            let boi22;
+            let boi9;
  
             msg.edit(':thinking:  **| اذا صرت من الادارة وش رح تقدم للسرفر... ✏ **').then(msg => {
  
+             
+             
+              
+          message.channel.awaitMessages(filter, {
+ 
+            max: 1,
+ 
+            time: 90000,
+ 
+            errors: ['time']
+ 
+          })
+ 
+          .then(collected => {
+ 
+            collected.first().delete();
+ 
+            boi = collected.first().content;
+             
+             
+                       
+             
               .then(collected => {
  
                 collected.first().delete();
@@ -568,7 +581,7 @@ ${boi}
 ${boi2}
 
 [**وش رح يقدم للسرفر**]:
-${boi22}
+${boi9}
  
 [**تم التقديم بواسطة**]:
 ${message.author}
