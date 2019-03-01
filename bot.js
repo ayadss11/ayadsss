@@ -519,12 +519,32 @@ if(!message.channel.guild) return message.reply(' ');
             collected.first().delete();
  
             boi = collected.first().content;
+               
+               
+               
  
             let boi9;
  
             msg.edit('🤵 **| اذا صرت من الادارة وش رح تقدم للسرفر... ✏ **').then(msg => {
  
-                       
+       message.channel.awaitMessages(filter, {
+ 
+            max: 1,
+ 
+            time: 90000,
+ 
+            errors: ['time']
+ 
+          })
+ 
+          .then(collected => {
+ 
+            collected.first().delete();
+ 
+            boi = collected.first().content;
+                                      
+                                      
+                                      
              
               .then(collected => {
  
