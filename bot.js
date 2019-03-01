@@ -478,6 +478,9 @@ if(!message.channel.guild) return message.reply(' ');
       msg.edit('📜 **| من فضلك اكتب عمرك  الأن... ✏ **').then(msg => {
  
  
+       
+       
+       
  
           message.channel.awaitMessages(filter, {
  
@@ -499,18 +502,9 @@ if(!message.channel.guild) return message.reply(' ');
  
             msg.edit('🤵 **| من فضلك اكتب من اي بلد انت الأن... ✏ **').then(msg => {
  
-  
-          
+   
              
-             
-            let boi9;
- 
-            msg.edit(':thinking:  **| اذا صرت من الادارة وش رح تقدم للسرفر... ✏ **').then(msg => {
- 
-             
-             
-              
-          message.channel.awaitMessages(filter, {
+              message.channel.awaitMessages(filter, {
  
             max: 1,
  
@@ -525,8 +519,11 @@ if(!message.channel.guild) return message.reply(' ');
             collected.first().delete();
  
             boi = collected.first().content;
-             
-             
+ 
+            let boi9;
+ 
+            msg.edit('🤵 **| اذا صرت من الادارة وش رح تقدم للسرفر... ✏ **').then(msg => {
+ 
                        
              
               .then(collected => {
