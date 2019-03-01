@@ -435,17 +435,6 @@ client.on("guildMemberAdd", member => {
 
 
 
-const prefix ="!";
-const Discord = require('discord.js');
-const client = new Discord.Client();
-exports.client = client;
-
-client.on('ready', () => {
- console.log("هلا التوت شغل تمم "); 
-console.log("log");
-});
-
-
 
 
 
@@ -634,7 +623,6 @@ ${message.author.id}`);
 
 
 
-client.login(process.env.TOKEN); 
 
 
 
