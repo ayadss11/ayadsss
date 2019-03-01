@@ -441,7 +441,8 @@ client.on("guildMemberAdd", member => {
 
 var guilds = {};
 client.on('message',async message => {
-  if(message.content.startsWith(prefix + "تقديم")) {
+ var prefix2 = '!';//البرفكس
+  if(message.content.startsWith(prefix2 + "تقديم")) {
  
 if(!message.channel.guild) return message.reply(' ');
  
@@ -522,23 +523,19 @@ if(!message.channel.guild) return message.reply(' ');
 
             })
 
-   
               let boi4;
    
               msg.edit('🤵 **| 33من فضلك اكتب من اي بلد انت الأن... ✏ **').then(msg => {
-   
-   
-   
                 message.channel.awaitMessages(filter, {
    
                   max: 1,
-   
+ 
                   time: 90000,
-   
+           
                   errors: ['time']
-   
+           
                 })
-   
+           
 
  
       msg.edit('🛡 **| [ هل انت متأكد من تقديمك؟ | [ نعم ] او [ لا**');
