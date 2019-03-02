@@ -65,7 +65,20 @@ client.on('message', message => {
 
 
 
-
+client.on('message', message => {
+    if (message.content.startsWith(prefix + 'reject')) {//هنا الأمر
+        if (message.author.bot) return;
+        if (!message.guild) return;
+        let Room = message.guild.channels.find(`name`, 'accept-denied');
+        let user = message.mentions.users.first();
+        let embedreject = new Discord.RichEmbed()/
+        .setColor('RANDOM')//
+        .setAuthor(user.username,user.avatarURL)
+        .setTitle('» `لم يتم قبولك كإداري` :x: ')//هنا تقدر تغير الكلام حق الرسالة
+        .setThumbnail(message.author.avatarURL)
+        Room.sendEmbed(embedreject);
+    }
+});
 
 
 
