@@ -66,33 +66,6 @@ client.on('message', message => {
 
 
 
-client.on("ready", async  => {
-setInterval(function(){
-client.channels.find('id', '550618846835376128').setName("W");
-client.channels.find('id', '550618846835376128').setName("We");
-client.channels.find('id', '550618846835376128').setName("Wel");
-client.channels.find('id', '550618846835376128').setName("Welc");
-client.channels.find('id', '550618846835376128').setName("Welco");
-client.channels.find('id', '550618846835376128').setName("Welcom");
-client.channels.find('id', '550618846835376128').setName("Welcome");
-client.channels.find('id', '550618846835376128').setName("Welcome T");
-client.channels.find('id', '550618846835376128').setName("Welcome To");
-client.channels.find('id', '550618846835376128').setName("Welcome To A");
-client.channels.find('id', '550618846835376128').setName("Welcome To AY");
-client.channels.find('id', '550618846835376128').setName("Welcome To AYX");
-client.channels.find('id', '550618846835376128').setName("Welcome To AYX S");
-client.channels.find('id', '550618846835376128').setName("Welcome To AYX Se");
-client.channels.find('id', '550618846835376128').setName("Welcome To AYX Ser");
-client.channels.find('id', '550618846835376128').setName("Welcome To AYX Serv");
-client.channels.find('id', '550618846835376128').setName("Welcome To AYX Serve");
-client.channels.find('id', '550618846835376128').setName("Welcome To AYX Server");
-
-
-
-  }, 2500);
-});
-
-
 
 
 
