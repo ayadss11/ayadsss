@@ -80,15 +80,12 @@ client.channels.find('id', '550618846835376128').setName("Welcome To");
 client.channels.find('id', '550618846835376128').setName("Welcome To A");
 client.channels.find('id', '550618846835376128').setName("Welcome To AY");
 client.channels.find('id', '550618846835376128').setName("Welcome To AYX");
-client.channels.find('id', '550618846835376128').setName("Welcome To AYX C");
-client.channels.find('id', '550618846835376128').setName("Welcome To AYX Co");
-client.channels.find('id', '550618846835376128').setName("Welcome To AYX Com");
-client.channels.find('id', '550618846835376128').setName("Welcome To AYX Comm");
-client.channels.find('id', '550618846835376128').setName("Welcome To AYX Commu");
-client.channels.find('id', '550618846835376128').setName("Welcome To AYX Commun");
-client.channels.find('id', '550618846835376128').setName("Welcome To AYX Communi");
-client.channels.find('id', '550618846835376128').setName("Welcome To AYX Communit");
-client.channels.find('id', '550618846835376128').setName("Welcome To AYX Community");
+client.channels.find('id', '550618846835376128').setName("Welcome To AYX S");
+client.channels.find('id', '550618846835376128').setName("Welcome To AYX Se");
+client.channels.find('id', '550618846835376128').setName("Welcome To AYX Ser");
+client.channels.find('id', '550618846835376128').setName("Welcome To AYX Serv");
+client.channels.find('id', '550618846835376128').setName("Welcome To AYX Serve");
+client.channels.find('id', '550618846835376128').setName("Welcome To AYX Server");
 
 
 
