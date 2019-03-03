@@ -65,20 +65,6 @@ client.on('message', message => {
 
 
 
-client.on('message', message => {
-    if (message.content.startsWith(prefix + 'reject')) {//هنا الأمر
-        if (message.author.bot) return;
-        if (!message.guild) return;
-        let Room = message.guild.channels.find(`name`, 'accept-denied');
-        let user = message.mentions.users.first();
-        let embedreject = new Discord.RichEmbed()/
-        .setColor('RANDOM')//
-        .setAuthor(user.username,user.avatarURL)
-        .setTitle('» `لم يتم قبولك كإداري` :x: ')//هنا تقدر تغير الكلام حق الرسالة
-        .setThumbnail(message.author.avatarURL)
-        Room.sendEmbed(embedreject);
-    }
-});
 
 
 
@@ -1496,6 +1482,122 @@ client.on('message', message => {//new msg event
 
 
 
+
+
+
+
+
+
+
+
+
+client.on("message", msg => { //Narox Dev
+    if(msg.author.bot) return;
+    if(msg.channel.type === 'dm') return;
+  let prefix = '!'; //البرفكس
+  let msgarray = msg.content.split(" ");
+  let cmd = msgarray[0];
+  let args = msgarray.slice(1);
+  if(cmd === `${prefix}warn`){//الامر
+    
+    
+  
+    let rUser = msg.guild.member(msg.mentions.users.first() || msg.guild.members.get(args[0]));
+  if(!rUser) return msg.channel.send("Couldn't find users.");
+      let reason = args.join(" ").slice(22);
+  
+      let reportembed = new Discord.RichEmbed()
+      .setDescription("Warn")
+      .setColor("BLACK")
+      .addField("Warn User", `${rUser} with ID: ${rUser.id}`)
+      .addField("Warn By", `${msg.author} with ID: ${msg.author.id}`)
+      .addField("Channel", msg.channel)
+      .addField("Time", msg.createdAt)
+      .addField("Reason",`${reason}`)
+      
+      
+      let reportchannel = msg.guild.channels.find(`name`,"log_log_log_ayxbot_log"); //حط هنا اسم الروم الي يوريك بعض المعلومات
+      if(!reportchannel) return msg.channel.send("Couldn't find `log_log_log_ayxbot_log` channel. "); //ط هنا اسم الروم الي يوريك بعض المعلومات
+      
+      msg.delete().catch(O_o=>{});
+      reportchannel.send(reportembed);
+      let role = msg.guild.roles.find(`name`, 'Warn'); 
+      if(!role) return msg.guild.channel.send("Could't find `Warn` role."); 
+      rUser.addRole(role);
+      
+          return;
+      }
+      });
+
+
+
+
+
+
+
+
+
+client.on("message", msg => {//So-92.#0885
+    if(msg.author.bot) return;
+if(msg.channel.type === 'dm') return;
+
+let p = "!";//البرفكس
+let msgarray = msg.content.split(" ");//So-92.#0885
+let cmd = msgarray[0];//So-92.#0885
+let args = msgarray.slice(1);
+
+if(cmd === `${p}ban`){
+    let bUser = msg.guild.member(msg.mentions.users.first() || msg.guild.members.get(args[0]));
+if(!bUser) return msg.channel.send("استخدم: `[ ${p}ban @user <السبب> ] مثال : ${p} @So-92.#0885 نشر`");
+let breason = args.join(" ").slice(22);
+if(!msg.member.hasPermission("BAN_MEMBERS")) return msg.channel.send("ليس لديك الصلاحية الكافية ❌").then(s => {
+s.delete(1600);
+})
+ if(!msg.guild.me.hasPermission("BAN_MEMBERS")) return msg.channel.send("انا ليس لدي صلاحية كافية ❌").then(z => {
+z.delete(1600);
+})
+if(bUser.hasPermission("BAN_MEMBERS")) return msg.channel.send("لا يمكنني ان احظر اداري").then(bs => {
+bs.delete(1600);
+})
+//So-92.#0885
+let banembed = new Discord.RichEmbed()
+.setDescription("~ban~")
+.setColor("BLACK")
+.addField("banned User", `${bUser} with ID: ${bUser.id}`)
+.addField("banned By", `<@${msg.author.id}> with ID: ${msg.author.id}`)
+.addField("banned In", msg.channel)
+.addField("Time", msg.createdAt)
+.addField("Reason", breason)
+//So-92.#0885
+let banChannel = msg.guild.channels.find("name","log_log_log_ayxbot_log");
+if(!banChannel) return msg.channel.send(`اكتب ${p}banslog`).then(pb => {
+pb.delete(1600);
+})
+//So-92.#0885
+msg.guild.member(bUser).ban();
+msg.reply("تم بنجاح").then(ps => {
+ps.edit("✅").then(ss => {
+ss.delete(1500)
+})
+})
+banChannel.send(banembed)
+    return;
+}
+
+
+});//So-92.#0885
+
+client.on("message", msg => {
+let prefix = '!';//البرفكس
+if(!msg.member.hasPermission("BAN_MEMBERS")) return msg.channel.send("ليس لديك الصلاحية الكافية :x:");
+ if(!msg.guild.me.hasPermission("BAN_MEMBERS")) return message.channel.send("انا ليس لدي صلاحية كافية :x:");
+if(msg.content.startsWith(prefix + "log_log_log_ayxbot_log")){
+msg.guild.createChannel("log_log_log_ayxbot_log");
+msg.reply(" تم بنجاح :white_check_mark: ").then(p => {
+p.delete(1600)
+})
+}
+});
 
 
 
